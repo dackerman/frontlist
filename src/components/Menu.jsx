@@ -5,10 +5,14 @@ export default class Menu extends React.Component {
     const itemStyle = {
       listStyle: 'none',
       display: 'inline',
-      padding: '5px'
+      padding: '5px',
+      backgroundColor: '#fff',
+      margin: '5px'
     };
     
     const listStyle = {
+      display: 'flex',
+      justifyContent: 'center',
       padding: 0
     };
     

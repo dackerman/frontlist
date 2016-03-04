@@ -1,27 +1,36 @@
 import React from 'react';
 
+import Fonts from './Fonts.js';
+
 import FullScreenImage from './FullScreenImage.jsx';
 import Menu from './Menu.jsx';
+import Signup from './Signup.jsx';
+import About from './About.jsx';
+import Footer from './Footer.jsx';
 
 import bg from './bg.png';
 
 export default class App extends React.Component {
   render() {
     const menu = [
-      { name: 'herp', link: 'https://google.com' },
-      { name: 'herp2', link: 'https://google.com' }
+      { name: 'Home', link: '#home' },
+      { name: 'About', link: '#about' }
     ];
 
-    const flexbox = {
+    const appStyle = {
       display: 'flex',
-      justifyContent: 'center',
-      fontFamily: 'Helvetica, Arial, sans-serif'
+      justifyContent: 'flex-start',
+      flexDirection: 'column',
+      fontFamily: Fonts.content
     };
     
     return (
-      <div style={flexbox}>
+      <div id="home" style={appStyle}>
         <FullScreenImage image={bg} />
         <Menu menuItems={menu} />
+        <Signup />
+        <About />
+        <Footer />
       </div>
     );
   }

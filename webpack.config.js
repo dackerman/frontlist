@@ -16,23 +16,22 @@ module.exports = {
     module: {
         loaders: [
             {
-              test: /\.css$/,
-              loaders: ['style', 'css'],
-              include: PATHS.app
-            },
-      
-            // Set up jsx. This accepts js too thanks to RegExp
-            {
-              test: /\.jsx?$/,
-              // Enable caching for improved performance during development
-              // It uses default OS directory by default. If you need something
-              // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
-              loaders: ['babel?cacheDirectory'],
-              // Parse only app files! Without this it will go through entire project.
-              // In addition to being slow, that will most likely result in an error.
-              include: PATHS.app
+                test: /\.css$/,
+                loaders: ['style', 'css'],
+                include: PATHS.app
+            }, {
+                test: /\.jsx?$/,
+                // Enable caching for improved performance during development
+                // It uses default OS directory by default. If you need something
+                // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
+                loaders: ['babel?cacheDirectory'],
+                // Parse only app files! Without this it will go through entire project.
+                // In addition to being slow, that will most likely result in an error.
+                include: PATHS.app
+            }, {
+                test: /\.(png|jpg)$/,
+                loader: 'url?limit=25000'
             }
-      
-          ]
+        ]
     }
 };
